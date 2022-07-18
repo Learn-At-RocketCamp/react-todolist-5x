@@ -71,5 +71,6 @@ function App() {
     </div>
   );
 }
+/* end of App() */
 
 export default App;
