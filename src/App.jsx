@@ -5,12 +5,25 @@ import PageHome from './pages/PageHome';
 import PageTodos from './pages/PageTodos';
 import PageDev from './pages/PageDev';
 import PageNotFound from './pages/PageNotFound';
+import PageLogin from './pages/PageLogin';
+import PageSignup from './pages/PageSignup';
 
 function Layout() {
   return (
     <>
       <nav>
         <ul className="text-sky-600">
+          <li>
+            <Link to="/login">LOGIN</Link>
+          </li>
+          <li>
+            <Link to="/signup">SIGNUP</Link>
+          </li>
+
+          <li>
+            <Link to="/dev">DEV</Link>
+          </li>
+
           <li>
             <Link to="/">HOME</Link>
             {/*
@@ -23,9 +36,7 @@ function Layout() {
           <li>
             <Link to="/todos">TODOS</Link>
           </li>
-          <li>
-            <Link to="/dev">DEV</Link>
-          </li>
+
           <li>
             <Link to="/idontknowwheretogo">404</Link>
           </li>
@@ -51,6 +62,9 @@ function App() {
       element: <Layout />,
       children: [
         { index: true, element: <PageHome /> },
+        { path: '/login', element: <PageLogin /> },
+        { path: '/signup', element: <PageSignup /> },
+
         { path: '/todos', element: <PageTodos /> },
         { path: '/dev', element: <PageDev /> },
         { path: '*', element: <PageNotFound /> },
